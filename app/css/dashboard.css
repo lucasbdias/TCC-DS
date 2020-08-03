@@ -1,0 +1,44 @@
+body{
+    background-color: white;
+}
+
+h1#title, .description{
+    color: #bb5555;
+    text-align: justify;
+}
+
+.description ul li a{
+    text-decoration: none;
+    font-weight: bold;    
+}
+
+label.option{
+    width: 100%;
+    padding: 10px 5px 10px 5px;
+    background-color: #ccc;
+    text-align: center;
+    font-weight: bold;
+}
+.area-item{
+    background-color: #eee;
+    padding: 5px;    
+}
+#loading{
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.icones i{    
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+
+.icones .view{
+    color: blue;
+}
+.icones a{
+    color: red;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cupons</title>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script src="../js/verificarCookieUser.js"></script>
+	<script type="text/javascript" src="../js/cupom.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="https://kit.fontawesome.com/979d57fe41.js" crossorigin="anonymous"></script>
+	<script src="../js/main.js"></script>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../src/main.css">
+
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/verificadores.js"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</head>
+
+<body>
+	<nav class="menu-default">
+        <div class="nav-wrapper">
+          <a class="brand-logo" href="#">Gerenciar Cupons</a>
+        </div>
+      </nav>
+      <nav class="menu-footer">
+            <ul class="left hide-on-med-and-down" id="nav-mobile">
+              <li><a href="crud_post.html">Post<i class="material-icons right">fiber_new</i></a></li>
+              <li><a href="crud_produto.html">Produto<i class="material-icons right">shopping_cart</i></a></li>
+              <li><a href="crud_cupom.html">Cupons<i class="material-icons right">local_offer</i></a></li>
+              <li><a href="crud_cliente.html">Clientes<i class="material-icons right">account_circle</i></a></li>
+              <li><a href="chat_adm.html">Chat Clientes<i class="material-icons right">chat</i></a></li>
+            </ul>
+        </nav>
+<div class="container z-depth-1">
+	<div id="cadastro">
+		<h3 id="title">Cupons</h3>
+		<h5 id="txtcad">Cadastro de Cupons <i class="material-icons left green-text">add</i></h5>
+		<div id="cad">
+			<form onsubmit="return false;" class="collapse" id="formcad">
+
+				<div class="form-group" style="display: none">
+					<label for="idcupons">ID</label>
+					<input type="text" class="form-control" id="idcupons" value="0" name="idcupons" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<label for="titulo">Título</label>
+					<input type="text" class="form-control" id="titulo" name="titulo" autocomplete="off"
+						placeholder="Dígite seu titulo e sobretitulo">
+				</div>
+
+				<div class="form-group">
+					<label for="codigo">Código</label>
+					<input type="text" class="form-control" id="codigo" name="codigo" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<label for="data_criacao">Data de Criação</label>
+					<input type="date" class="form-control" id="data_criacao" name="data_criacao" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<label for="data_expdicao">Data de Expedição</label>
+					<input type="date" class="form-control" id="data_expdicao" name="data_expdicao" autocomplete="off">
+				</div>
+
+				<button class="btn waves-effect" type="submit" id="enviar" value="Enviar">Cadastrar</button>
+				<button class="btn waves-effect waves-red red" type="reset" id="l" value="Limpar">Limpar</button>
+
+			</form>
+		</div>
+	</div>
+<div class="section"></div>
+	<div id="consulta">
+		<h5 id="txtcon" data-toggle="collapse">Consulta de Cupons <i class="material-icons left blue-text">local_offer</i></h5>
+		<div id="formcon" class="list collapse">
+			<table class="responsive-table">
+				<thead>
+					<tr>
+						<th>ID Cupom</th>
+						<th>titulo</th>
+						<th>codigo</th>
+						<th>Data de Criação</th>
+						<th>Data de Expdicao</th>
+						<th>Excluir</th>
+						<th>Editar </th>
+					</tr>
+				</thead>
+				<tbody id="tb">
+				</tbody>
+			</table>
+		</div>
+		<br>
+	</div>
+</div>
+
+</body>
+
+</html>

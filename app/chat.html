@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat- Makertech</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="src/main.css">
+    <!--JS-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/verificadores.js"></script>
+    <script type="text/javascript" src="js/chat.js"></script> 
+    <script src="src/main.js"></script>
+
+
+</head>  
+ 
+<body> 
+    <nav class="menu-default">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">MKTEC Labs</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Inicio<i class="material-icons right">home</i></a></li>
+                <li><a href="produto.html">Produtos<i class="material-icons right">shopping_cart</i></a></li>
+                <li><a href="cupons.html">Cupons<i class="material-icons right">local_offer</i></a></li>
+                <li><a href="chat.html">Chat<i class="material-icons right">chat</i></a></li>
+                <li><a href="login_cliente.html">Perfil<i class="material-icons right">account_circle</i></a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <nav class="menu-footer">
+        <div class="nav-wrapper">
+            <div class="col s12">
+                <a href="#!" class="breadcrumb">Chat<i class="material-icons left">&nbsp;chat</i></a>
+            </div>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav">
+        <li class="menu-default">
+            <div class="user-view">
+            <div class="background">
+                <img src="img/beG.jpg">
+            </div>
+            <a href="#user"><img class="circle" src="img/mkt.jpg"></a>
+            <a href="#name"><span class="white-text name" id="clienteNome">-</span></a>
+            <a href="#email"><span class="white-text email" id="clienteEmail">-</span></a>
+            </div>
+        </li>
+            <li><a href="index.html">Inicio<i class="material-icons right red-text">home</i></a></li>
+            <li><a href="produto.html">Produtos<i class="material-icons right red-text">shopping_cart</i></a></li>
+            <li><a href="cupons.html">Cupons<i class="material-icons right red-text">local_offer</i></a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="login_cliente.html">Perfil<i class="material-icons right red-text">account_circle</i></a></li>
+        <li><a href="chat.html">Chat<i class="material-icons right red-text">chat</i></a></li>
+    </ul>
+
+    <div class="container">
+        <div id="noCookie">
+            <h3>Você não esta logado!</h3>
+            <p>Faça o login para o acesso do chat.</p>
+            <a href="login_cliente.html" class="btn">Login</a>
+        </div>
+
+        <div id="comCookie" style="display: none;">
+            <div id="chat" style="margin-top: 5%;">
+                <div id="listagem" class="row msg-container">
+
+                </div>
+                <div id="pergunta" class="row" style="display: none;">
+                    <div class="col m9 s8 right" >
+                        <input type="text" name="txtNomeCliente" id="txtNomeCliente" hidden>
+                        <input type="number" name="idmensagem" id="idmensagem" hidden>
+                        <textarea name="txtpergunta" id="txtpergunta" cols="30" rows="10"></textarea>
+                    </div>
+                     <button id="btnenviar" class="btn chat-submit-button right">Enviar</button>
+                </div>
+                    <div class="col m3 s3" id="btnFuncoes">
+                        <button id="finalizarConversa" class="btn chat-submit-button right">Finalizar Conversa</button>
+                    </div>
+                <div id="novaPergunta">
+                    <button id="btnNovaConversa" class="btn chat-submit-button">Nova Conversa</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makertech Labs</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="src/main.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="src/main.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/login_usuario.js"></script>
+</head>
+
+<body class="corpo-admin">
+    <!-- Modal Structure -->
+    <div class="container">
+
+        <div id="modal1" class="modal modal-fixed-footer">
+
+            <div class="modal-content">
+
+                <form class="col s12">
+
+                    <div class="row">
+                        <div class="input-field col s12 l8" style="display: none">
+                            <input id="iduser" type="text" class="validate" name="iduser" autocomplete="off">
+                        </div>
+                        <div class="input-field col s12 l8">
+                            <input id="nome-completo" type="text" class="validate" name="nome" autocomplete="off">
+                            <label for="nome-completo">Nome completo</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                            <input id="user-email" type="email" class="validate" autocomplete="off" name="email">
+                            <label for="user-email">Email</label>
+                        </div>
+                        <div class="input-field col s12 l8">
+                            <input id="cargo" type="text" class="validate" autocomplete="off" name="cargo">
+                            <label for="cargo">Cargo</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                            <input type="password" class="validate" id="senha1" name="senha">
+                            <label for="senha1">Senha</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                            <input type="password" class="validate" id="rpt-senha" name="confsenha">
+                            <label for="rpt-senha">Repita a senha</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a id="enviar" class="waves-effect waves-red btn menu-footer">Cadastrar-se</a>
+                <a href="#!" class="btn red accent-4 modal-close">Cancelar</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <nav class="menu-default">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">MKTEC Labs</a>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav z-depth-2">
+        <li>
+            <div class="menu-default">
+        <li class="menu-default"><a href="perfil.html"><span class="waves-effect text-size white-text right"><i
+                        class="material-icons white-text left icon-size">account_circle</i>John Doe</span></a></li>
+        <li class="menu-default"><a href="#!"><span class="white-text right">jdandturk@gmail.com</span></a></li>
+        </div>
+        </li>
+        <li><a class="waves-effect waves-red" href="galeria.html"><i
+                    class="material-icons left red-text">insert_photo</i>Galeria</a></li>
+        <li><a class="waves-effect waves-red" href="promo.html"><i
+                    class="material-icons left red-text">whatshot</i>Promoções</a></li>
+        <li><a class="waves-effect waves-red" href="cupons.html"><i
+                    class="material-icons left red-text">local_offer</i>Cupons<span
+                    class="new badge blue accent-4">4</span></a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect waves-red" href="sobre.html">Sobre</a></li>
+        <li><a class="waves-effect waves-red" href="suport.html">Suporte</a></li>
+        <li><a class="waves-effect waves-red" href="config.html">Configurações</a></li>
+
+    </ul>
+
+    <div class="section"></div>
+    <!-- LOGIN -->
+    <div class="row">
+        <div class="col s12">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l12 z-depth-4 card-panel">
+                        <form class="login-form">
+                            <div class="row">
+                                <div class="input-field col s12 l8 m4">
+                                    <h5 class="margin">Entrar</h5>
+                                </div>
+                            </div>
+                            <div class="row margin">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix pt-2">person_outline</i>
+                                    <input id="username" type="email">
+                                    <label for="username" class="center-align">Usuário</label>
+                                </div>
+                            </div>
+                            <div class="row margin">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix pt-2">lock_outline</i>
+                                    <input id="password" type="password">
+                                    <label for="password">Senha</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <a href="#" id="logar"  
+                                        class="btn waves-effect waves-light border-round col s12 menu-default">Login</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <p class="margin medium-small btn waves-effect waves-light border-round col s12"><a href="#modal1" class="white-text accent-4 modal-trigger">Registrar</a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+</body>
+
+</html>

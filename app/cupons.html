@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makertech Labs - Cupons</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="src/main.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="src/main.js"></script>
+    <script src="js/cupom-cliente.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="menu-default">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">MKTEC Labs</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Inicio<i class="material-icons right">home</i></a></li>
+                <li><a href="produto.html">Produtos<i class="material-icons right">shopping_cart</i></a></li>
+                <li><a href="cupons.html">Cupons<i class="material-icons right">local_offer</i></a></li>
+                <li><a href="chat.html">Chat<i class="material-icons right">chat</i></a></li>
+                <li><a href="login_cliente.html">Perfil<i class="material-icons right">account_circle</i></a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <nav class="menu-footer">
+        <div class="nav-wrapper">
+            <div class="col s12">
+                <a href="#!" class="breadcrumb">Cupons<i class="material-icons left">&nbsp;local_offer</i></a>
+            </div>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav">
+        <li class="menu-default">
+            <div class="user-view">
+            <div class="background">
+                <img src="img/beG.jpg">
+            </div>
+            <a href="#user"><img class="circle" src="img/mkt.jpg"></a>
+            <a href="#name"><span class="white-text name" id="clienteNome">-</span></a>
+            <a href="#email"><span class="white-text email" id="clienteEmail">-</span></a>
+            </div>
+        </li>
+            <li><a href="index.html">Inicio<i class="material-icons right red-text">home</i></a></li>
+            <li><a href="produto.html">Produtos<i class="material-icons right red-text">shopping_cart</i></a></li>
+            <li><a href="cupons.html">Cupons<i class="material-icons right red-text">local_offer</i></a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="login_cliente.html">Perfil<i class="material-icons right red-text">account_circle</i></a></li>
+        <li><a href="chat.html">Chat<i class="material-icons right red-text">chat</i></a></li>
+    </ul>
+
+    <div class="section"></div>
+
+    <div class="container">
+        <div class="row">
+        </div>
+        <div class="row" id="cupom">
+
+        </div>
+    </div>
+</body>
+
+</html>

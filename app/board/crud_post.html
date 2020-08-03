@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/979d57fe41.js" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/jquery.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../src/main.css">
+  
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/verificadores.js"></script>
+    <script src="../js/verificarCookieUser.js"></script>
+    <script src="../js/post.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="../src/main.js"></script>
+</head>
+<body>
+  <nav class="menu-default">
+    <div class="nav-wrapper">
+      <a class="brand-logo" href="#">Gerenciar Posts</a>
+    </div>
+  </nav>
+  <nav class="menu-footer">
+        <ul class="left hide-on-med-and-down" id="nav-mobile">
+          <li><a href="crud_post.html">Post<i class="material-icons right">fiber_new</i></a></li>
+          <li><a href="crud_produto.html">Produto<i class="material-icons right">shopping_cart</i></a></li>
+          <li><a href="crud_cupom.html">Cupons<i class="material-icons right">local_offer</i></a></li>
+          <li><a href="crud_cliente.html">Clientes<i class="material-icons right">account_circle</i></a></li>
+          <li><a href="chat_adm.html">Chat Clientes<i class="material-icons right">chat</i></a></li>
+        </ul>
+    </nav>
+
+  <div class="container z-depth-2">
+    <h3 id="title">Posts</h3>
+    <div class="area-item">      
+      <h5 style="cursor: pointer;" class="option" data-toggle="collapse" data-target="#form" id="tituloOpcao">Cadastrar Post<i class="material-icons left green-text">add</i></h5>      
+      <form enctype="multipart/form-data" class="collapse" id="form" >        
+          <div class="form-row">
+
+            <div class="form-group col-md-12">
+              <label for="nome">Nome: </label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Titulo do post" required="" autocomplete="off">
+            </div>
+
+            <div class="form-group col-md-12">
+              <label for="descricao">Descrição: </label>
+              <textarea class="form-control" name="descricao" id="descricao" required="" placeholder="Descrição do Post"></textarea>
+            </div>
+
+            <div class="form-group col m12">
+              <label for="visualizacao">Visível?</label>
+              <p>
+                <label>
+                <input type="radio" id="sim" name="visualizacao" value="1" class="with-gap">
+                <span>Sim</span>
+              </label>
+              </p>
+              <p>
+                <label>
+                <input type="radio" id="nao" name="visualizacao" value="0" class="with-gap">
+                <span>Não</span>
+              </label>
+              </p>
+            </div>
+            <div style="display:none" id="foto_temp" class="form-group col-md-12">
+              Foto atual, selecione abaixo caso queira alterar.<br/>
+              <img src="#" id="foto_atual" width="120px"/>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="foto">Foto: </label>
+              <input type="file" class="form-control" id="foto" name="foto" accept="image/jpeg">
+            </div>
+          </div>       
+          <input type="hidden" name="type" value="cadastrar_post">
+          <input type="hidden" name="idpost" value="0">
+          <button type="submit" class="btn waves-effect">Cadastrar</button>
+          <button type="reset" class="btn waves-effect menu-footer">Limpar</button>
+      </form>
+      </div>
+      <div class="section"></div>
+      <div class="area-item">
+        <h5 class="option" data-toggle="collapse" data-target="#listagem" >Posts Cadastrados <i class="material-icons left blue-text">fiber_new</i></h5>      
+        <div class="list collapse" id="listagem">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Img</th>
+                <th scope="col">Nome</th>                     
+                <th scope="col">Descrição</th>                      
+                <th scope="col">Visualização</th>                      
+                <th scope="col">Criador</th>                      
+                <th scope="col">Opções</th>          
+              </tr>
+            </thead>
+            <tbody id="listagem_post_crud">
+                      
+            </tbody>
+          </table>
+        </div>
+        <br>
+      </div>
+  </div>
+
+
+   
+</body>
+</html>

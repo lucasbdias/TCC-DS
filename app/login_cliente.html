@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makertech Labs</title>
+
+    <script src="js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="src/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- Compiled and minified JavaScript -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/verificadores.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script src="src/main.js"></script>
+    <!-- <script src="js/cupom-cliente.js"></script> -->
+
+    <script>
+ $(document).ready(function () {
+    listarCliente();
+    destruirCookie = () => {
+$.get("http://localhost/MakerTech/server/webservice_cliente.php", {tipo: "destruirCookie"}).done((retorno) => {
+    let json = $.parseJSON(retorno);
+    if(json.status) {
+        window.location = "index.html";
+    }
+});
+}
+
+//verficação do cookie
+$.post("http://localhost/MakerTech/server/webservice_cliente.php", {tipo: "checkCookie"}).done((dados) => {
+let json = $.parseJSON(dados);
+if (json.status) {
+    let sair = `<li><a onclick="destruirCookie()">Sair<i class="material-icons right">input</i></a></li>`;
+    $('#nav-mobile').append(sair);
+}
+});
+});
+
+function listarCliente() {
+
+    $("#ltclient").html("");
+
+    $.ajax({
+        url: "http://localhost/MakerTech/server/webservice_cupom.php",
+        metbod: "get",
+        data: {
+            "tipo": "consulta"
+        },
+        success: function (retorno) {
+
+            let json = $.parseJSON(retorno);
+            if (json.length != 0) {
+                let x = 0;
+
+                for (x = 0; x < json.length; x++) {
+                    let dataum = json[x].data_expdicao;
+                    let data = dataum.split("-");
+                    let content = `
+       
+        <div class="card">
+          <div class="card-image">
+            <a class="btn-floating pulse halfway-fab waves-effect waves-light red"><i class="material-icons">local_offer</i></a>
+          </div>
+          <div class="card-content">
+            <p>
+                <label>
+                    
+                    <h5>Cupom</h5> <hr>
+                    <span class="helper-text red-text" data-error="wrong" data-success="right">Copie o código abaixo</span> <br> <br>
+                    <p class="txtbold teal-text">${json[x].titulo}<br><a href="https://www.makertechlabs.com.br/" class="right"> Use no site</a><br></p>
+                    <p>Expira em: <span class="txtbold red-text">${data[2]+"-"+data[1]+"-"+data[0]}</span></p>
+                    
+                  <br>
+                </label>
+              </p>
+          </div>
+        </div>
+      </div>
+        <br> <br>    
+       `;
+
+                    $("#cupom").append(content);
+
+                }
+            } else {
+                let content = `
+            <div class="col s12 blue-grey lighten-5 bradius flow-text" id="msg-txt">
+        <p>Não temos nenhum cupom disponivel no momento. <br>Não se esqueça, cante como se ninguém estivesse ouvindo! ;)</p>
+    </div>               
+            `;
+                $("#cupom").append(content);
+            }
+        },
+        timeout: 3000,
+        error: function () {
+            alert("erro ao encontrar servidor");
+        }
+    });
+}
+
+    </script>
+</head>
+
+<body>
+    <!-- Modal Structure -->
+    <div class="container">
+
+        <div id="modal1" class="modal modal-fixed-footer">
+
+            <div class="modal-content">
+
+                <div class="col s12">
+
+                    <div class="row">
+                        <div class="input-field col s12 l8">
+                            <input type="text" id="txtnome" placeholder="Nome" class="validate">
+                            <label for="txtnome">Nome completo</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                            <select id="txtarea" >
+                                <option value="0">Selecione uma opção</option>
+                                <option value="1">Odontologia</option>
+                                <option value="2">Joalheria</option>
+                                <option value="3">Engenharia</option>
+                                <option value="4">Outra área</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s12 l8">
+                            <input type="email" id="txtemail2" placeholder="Email" class="validate">
+                            <label for="txtemail2">Email</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                            <input type="password" id="txtsenha2" placeholder="Senha" class="validate">
+                            <label for="txtsenha2">Senha</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="waves-effect waves-red btn menu-footer" id="btnenviar">Cadastrar-se</button>
+                <button class="btn red accent-4 modal-close">Cancelar</button></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- MODAL -->
+
+    <nav class="menu-default">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">MKTEC Labs</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Inicio<i class="material-icons right">home</i></a></li>
+                <li><a href="produto.html">Produtos<i class="material-icons right">shopping_cart</i></a></li>
+                <li><a href="cupons.html">Cupons<i class="material-icons right">local_offer</i></a></li>
+                <li><a href="chat.html">Chat<i class="material-icons right">chat</i></a></li>
+                <li><a href="login_cliente.html">Perfil<i class="material-icons right">account_circle</i></a></li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <nav class="menu-footer">
+        <div class="nav-wrapper">
+            <div class="col s12">
+                <a href="#!" class="breadcrumb">Login<i class="material-icons left">&nbsp;account_circle</i></a>
+            </div>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav">
+        <li class="menu-default">
+            <div class="user-view">
+                <div class="background">
+                    <img src="img/beG.jpg">
+                </div>
+                <a href="#user"><img class="circle" src="img/mkt.jpg"></a>
+                <a href="#name"><span class="white-text name">-</span></a>
+                <a href="#email"><span class="white-text email">-</span></a>
+            </div>
+        </li>
+        <li><a href="index.html">Inicio<i class="material-icons right red-text">home</i></a></li>
+        <li><a href="produto.html">Produtos<i class="material-icons right red-text">shopping_cart</i></a></li>
+        <li><a href="cupons.html">Cupons<i class="material-icons right red-text">local_offer</i></a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="login_cliente.html">Perfil<i class="material-icons right red-text">account_circle</i></a></li>
+        <li><a href="chat.html">Chat<i class="material-icons right red-text">chat</i></a></li>
+    </ul>
+
+
+    <div class="section"></div>
+    <!-- LOGIN -->
+    <div class="row">
+        <div class="col s12">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l12 z-depth-4 card-panel">
+                        <div class="login-form">
+                            <div class="row">
+                                <div class="input-field col s12 l8 m4">
+                                    <h5 class="margin">Entrar</h5>
+                                </div>
+                            </div>
+                            <div class="row margin">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix pt-2">person_outline</i>
+                                    <input type="email" id="txtemail">
+                                    <label for="txtemail" id="txtemail" class="center-align">Usuário</label>
+                                </div>
+                            </div>
+                            <div class="row margin">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix pt-2">lock_outline</i>
+                                    <input type="password" id="txtsenha" type="password">
+                                    <label for="txtsenha">Senha</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button type="button" id="btnlogar"
+                                        class="btn waves-effect waves-light border-round col s12 menu-default">Logar</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <p class="margin medium-small"><a href="#modal1"
+                                            class="btn white-text col s12 accent-4 modal-trigger">Registrar</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</body>
+
+</html>

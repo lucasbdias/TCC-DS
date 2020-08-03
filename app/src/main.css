@@ -1,0 +1,24 @@
+.corpo-admin{
+    background-image: url("../imgs/red-oh-la-la-light.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.bradius {
+    border-radius: 5px;
+}
+.menu-default {
+    background-color: #c62828;
+}
+.menu-footer {
+    background-color: #d32f2f;
+}
+.icon-size{
+    font-size: 48px;
+}
+.text-size{
+    font-size: 18px;
+}
+.m-auto{
+    margin: 0 auto;
+}

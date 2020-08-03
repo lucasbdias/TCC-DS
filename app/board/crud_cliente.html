@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../src/main.css">
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/verificadores.js"></script>
+    <script src="../js/verificarCookieUser.js"></script> 
+    <script type="text/javascript" src="../js/crud_cliente.js"></script>
+</head>
+<body>
+
+    <div id="modal1" class="modal modal-fixed-footer">
+
+        <div class="modal-content">
+
+            <div class="col s12">
+
+                <div class="row">
+                    <div class="input-field col s12 l8">
+                        <input type="number" id="codigo" value="0" hidden>
+                    </div>
+                    <div class="input-field col s12 l8">
+                        <input type="text" id="txtnome" placeholder="Nome" class="validate">
+                        <label for="txtnome">Nome completo</label>
+                    </div>
+                    <div class="input-field col s12 l6">
+                        <select id="txtarea" style="display: block;">
+                            <option value="0">Selecione uma opção</option>
+                            <option value="1">Odontologia</option>
+                            <option value="2">Joalheria</option>
+                            <option value="3">Engenharia</option>
+                            <option value="4">Outra área</option>        
+                        </select>
+                    </div>
+                    <div class="input-field col s12 l8">
+                        <input type="email" id="txtemail" placeholder="Email" class="validate">
+                        <label for="txtemail">Area de Atuação</label>
+                    </div>
+                    <div class="input-field col s12 l6">
+                        <input type="password" id="txtsenha" placeholder="Senha" class="validate">
+                        <label for="txtsenha">Senha</label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="waves-effect waves-red btn menu-footer" id="btnenviar">Cadastrar-se</button>
+                <button class="btn red accent-4 modal-close">Cancelar</button></p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="menu-default">
+        <div class="nav-wrapper">
+          <a class="brand-logo" href="#">Gerenciar Clientes</a>
+        </div>
+      </nav>
+      <nav class="menu-footer">
+            <ul class="left hide-on-med-and-down" id="nav-mobile">
+              <li><a href="crud_post.html">Post<i class="material-icons right">fiber_new</i></a></li>
+              <li><a href="crud_produto.html">Produto<i class="material-icons right">shopping_cart</i></a></li>
+              <li><a href="crud_cupom.html">Cupons<i class="material-icons right">local_offer</i></a></li>
+              <li><a href="crud_cliente.html">Clientes<i class="material-icons right">account_circle</i></a></li>
+              <li><a href="chat_adm.html">Chat Clientes<i class="material-icons right">chat</i></a></li>
+            </ul>
+        </nav>
+
+    <div class="container"> 
+        <button type="button" id="btncadastrar" class="btn" style="margin-top: 3%;">cadastrar</button>
+        <table>
+            <thead>
+            <tr class="highlight">
+                <th>id</th>
+                <th>nome</th>
+                <th>área atuação</th>
+                <th>email</th>
+                <th>Senha</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody id="tabela_listagem">
+                
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
